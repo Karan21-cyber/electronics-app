@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animate-top-drawer {
+    animation: drawer 1s ease-in;
+}
+
+@keyframes drawer {
+    0% {
+        transform: translateY(-110%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: translateY(0%);
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+
+
+.animate-side-drawer {
+    animation: sidedrawer 1s ease-in;
+}
+
+@keyframes sidedrawer{
+    0%{
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
