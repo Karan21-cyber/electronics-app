@@ -6,10 +6,16 @@ import Headers from "../navbar/header";
 import Footer from "../footer/footer";
 import SideNavbar from "../navbar/drawer/side-drawer";
 import { navState } from "@/atom/navbar/nav-bar";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 function ContentProvider({ children }: { children: React.ReactNode }) {
   const [openNav, setOpenNav] = useRecoilState(navState);
   const sideBarRef = useRef<HTMLDivElement>(null);
+
+  const { data, isLoading, error, isError } = useQuery(["category"], () =>
+    axios.get("https://fakestoreapi.com/products/categories")
+  );
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -32,13 +38,13 @@ function ContentProvider({ children }: { children: React.ReactNode }) {
           ref={sideBarRef}
           className={` absolute animate-side-drawer bg-white z-[99] `}
         >
-          <SideNavbar />
+          <SideNavbar categories={data?.data} />
         </div>
       )}
 
-      <div className={`${openNav  ? "opacity-60" : ""}`}>
+      <div className={`${openNav ? "opacity-60" : ""}`}>
         <Headers />
-        <Navbar />
+        <Navbar categories={data?.data} />
         {children}
         <Footer />
       </div>

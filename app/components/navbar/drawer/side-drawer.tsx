@@ -7,8 +7,12 @@ import { IoClose } from "react-icons/io5";
 import { BiChevronRight } from "react-icons/bi";
 import { useRecoilState } from "recoil";
 import { navState } from "@/atom/navbar/nav-bar";
+import { Category } from "@/app/dto/dto";
 
-function SideNavbar() {
+interface INavbar {
+  categories: Category[];
+}
+function SideNavbar({ categories }: INavbar) {
   const [openNav, setOpenNav] = useRecoilState(navState);
 
   return (
@@ -28,12 +32,12 @@ function SideNavbar() {
       </header>
       <nav className="side-navbar-links py-3">
         <ul className="category-links flex flex-col gap-5 text-xs font-normal ">
-          {category?.map((link) => (
+          {categories?.map((category,index) => (
             <li
-              key={link?.id}
-              className="link-name flex justify-between px-5 items-center"
+              key={index}
+              className="link-name flex justify-between px-5 items-center capitalize"
             >
-              <Link href={"#"}>{link?.name}</Link>
+              <Link href={"#"}>{category}</Link>
               <BiChevronRight size={16} />
             </li>
           ))}

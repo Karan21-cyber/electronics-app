@@ -1,13 +1,15 @@
-"use client"
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ProductCard from "../reusable/product-card";
-import { getAllProduct } from "@/app/hooks/getproduct";
+import { Main } from "@/app/dto/dto";
+import ProductLoading from "../loading/productloading";
 
-function NewProductSection() {
-  const data = getAllProduct();
-
-
+interface InewProduct {
+  data: Main[];
+  loading: boolean;
+}
+function NewProductSection({ data, loading }: InewProduct) {
   return (
     <section className="new-product-section flex flex-col gap-3 mt-5">
       <div className="new-product-section-header flex justify-between items-center">
@@ -22,8 +24,16 @@ function NewProductSection() {
         </Link>
       </div>
 
-      <div className="new-product-lists flex gap-1 items-center">
-        <ProductCard />
+      <div className="new-product-lists flex gap-1 items-center flex-wrap">
+        {loading ? (
+          <ProductLoading />
+        ) : (
+          <>
+            {data?.map((item) => (
+              <ProductCard key={item?.id} product={item} />
+            ))}
+          </>
+        )}
       </div>
     </section>
   );

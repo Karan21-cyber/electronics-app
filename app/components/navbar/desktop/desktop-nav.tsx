@@ -1,10 +1,14 @@
 import React from "react";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import Image from "next/image";
-import { category } from "@/utils/navbar/navlinks";
 import Link from "next/link";
+import { Category } from "@/app/dto/dto";
 
-function DesktopNav() {
+interface INavbar {
+  categories: Category[];
+}
+
+function DesktopNav({ categories }: INavbar) {
   return (
     <nav className="navbar-container md:px-3 lg:px-[5%] py-3 flex justify-between items-center border-b">
       <div className="lg:px-5 lg:py-[13px]">
@@ -17,12 +21,12 @@ function DesktopNav() {
         />
       </div>
       <ul className="category-links flex md:text-[11px] lg:text-sm font-semibold text-center items-center">
-        {category?.map((link) => (
+        {categories?.map((category,index) => (
           <li
-            key={link?.id}
-            className="link-name hover:text-white hover:bg-sky-blue hover:rounded-3xl px-2  py-1  lg:px-4 lg:py-2"
+            key={index}
+            className="link-name hover:text-white hover:bg-sky-blue hover:rounded-3xl px-2  py-1  lg:px-4 lg:py-2 capitalize"
           >
-            <Link href={"#"}>{link?.name}</Link>
+            <Link href={"#"}>{category}</Link>
           </li>
         ))}
         <li className="our-deal link-name border-2 border-sky-blue rounded-3xl ml-1 px-2  py-1 lg:px-4 lg:py-[6px]">
