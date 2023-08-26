@@ -50,7 +50,7 @@ const ProductSwiper = ({ data }: InewProduct) => {
             key={Math.random()}
             className="swiper-product min-w-[190px] min-h-[256px] w-[190px] h-[256px]"
           >
-            <ProductCard product={product} type="small" />
+            <ProductCard product={product} type="new" />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -14,7 +14,7 @@ function NewProductSection({ data }: InewProduct) {
           New Products
         </h1>
         <Link
-          href={"#"}
+          href={`/products/new`}
           className="newproduct-link text-[10px] lg:text-[13px] font-normal text-right text-sky-blue underline "
         >
           See more new Products

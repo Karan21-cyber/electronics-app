@@ -13,12 +13,12 @@ function ProductCard({ product, type }: IProduct) {
   return (
     <div
       className={`product-card-wrapper flex-col gap-4 items-center px-3 md:px-6 py-2  border `}
-      onClick={() => router.push(`/products/${product?.id}`)}
+      onClick={() => router.push(`/products/${type}/${product?.id}`)}
     >
       <h1 className="in-stock-wrapper text-light-green text-[10px] text-center ">
         in stock
       </h1>
-      <div className={`image-wrapper relative flex justify-center ${type==='small'? "w-[100px] h-[100px]" : "w-[150px] h-[150px]"}`}>
+      <div className={`image-wrapper relative flex justify-center ${type==='new'? "w-[100px] h-[100px]" : "w-[150px] h-[150px]"}`}>
         <Image
           src={product?.image}
           fill

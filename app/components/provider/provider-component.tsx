@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { RecoilRoot } from "recoil";
 import Navbar from "../navbar/nav-bar";
@@ -6,12 +7,12 @@ import Footer from "../footer/footer";
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <RecoilRoot>
       <Headers />
       <Navbar />
       {children}
       <Footer />
-    </div>
+    </RecoilRoot>
   );
 }
 

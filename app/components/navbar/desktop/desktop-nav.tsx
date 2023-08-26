@@ -26,7 +26,7 @@ async function DesktopNav({ categories }: { categories: Category[] }) {
             key={index}
             className="link-name hover:text-white hover:bg-sky-blue hover:rounded-3xl px-2 py-1 lg:px-4 lg:py-2 capitalize"
           >
-            <Link href={"#"}>{category}</Link>
+            <Link href={`/products/${category}`}>{category}</Link>
           </li>
         ))}
         <li className="our-deal link-name border-2 border-sky-blue rounded-3xl ml-1 px-2 py-1 lg:px-4 lg:py-[6px]">

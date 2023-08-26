@@ -6,17 +6,20 @@ import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import Drawer from "@mui/material/Drawer";
 import SideNavbar from "../drawer/side-drawer";
 import { Category } from "@/app/dto/dto";
+import { useRecoilState } from "recoil";
+import { navState } from "@/atom/navbar/nav-bar";
 
 function MobileNav({categories}:{categories:Category[]}) {
-  const [open, setOpen] = useState<boolean>(false);
+  const [navOpen, setNavOpen] = useRecoilState<boolean>(navState);
 
   const handleClose = () => {
-    setOpen(false);
+    setNavOpen(false);
   }
+
   return (
     <div>
       <nav className="navbar-container  px-3 py-[13px] flex justify-between items-center bg-sky-blue gap-2 text-white">
-        <IoMenu size={20} onClick={() => setOpen(true)} />
+        <IoMenu size={20} onClick={() => setNavOpen(true)} />
         <div className="search-container z-[1] w-[75%] text-[11px] font-normal flex gap-2 items-center bg-white rounded-3xl p-2">
           <FiSearch size={14} className="search-icon text-light-gray" />
           <input
@@ -40,11 +43,8 @@ function MobileNav({categories}:{categories:Category[]}) {
           </div>
         </div>
       </nav>
-      <Drawer
-        open={open}
-        onClose={handleClose}
-      >
-        <SideNavbar handleClose={handleClose} categories={categories}/>
+      <Drawer open={navOpen} onClose={handleClose}>
+        <SideNavbar  categories={categories} />
       </Drawer>
     </div>
   );

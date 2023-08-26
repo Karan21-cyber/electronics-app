@@ -1,16 +1,20 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { BiChevronRight } from "react-icons/bi";
 import { Category } from "@/app/dto/dto";
+import { useRecoilState } from "recoil";
+import { navState } from "@/atom/navbar/nav-bar";
 
-interface Inavbar{
-  handleClose:()=> void;
-  categories:Category[];
+interface Inavbar {
+  categories: Category[];
 }
 
-function SideNavbar({handleClose,categories} : Inavbar) {
+function SideNavbar({ categories }: Inavbar) {
+  const [openNav, setNavOpen] = useRecoilState<boolean>(navState);
+
   return (
     <section className="side-navbar w-[300px] sm:w-[400px] px-4 py-3 h-screen border">
       <header className="side-navbar-header-secrion flex justify-between items-center border-b py-2">
@@ -24,7 +28,7 @@ function SideNavbar({handleClose,categories} : Inavbar) {
             className="object-contain"
           />
         </div>
-        <IoClose size={20} onClick={handleClose} />
+        <IoClose size={20} onClick={() => setNavOpen(false)} />
       </header>
       <nav className="side-navbar-links py-3">
         <ul className="category-links flex flex-col gap-5 text-xs font-normal ">
@@ -33,7 +37,12 @@ function SideNavbar({handleClose,categories} : Inavbar) {
               key={index}
               className="link-name flex justify-between px-5 items-center capitalize"
             >
-              <Link href={"#"}>{category}</Link>
+              <Link
+                href={`/products/${category}/`}
+                onClick={() => setNavOpen(false)}
+              >
+                {category}
+              </Link>
               <BiChevronRight size={16} />
             </li>
           ))}
