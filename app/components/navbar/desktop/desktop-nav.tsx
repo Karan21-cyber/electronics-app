@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Category } from "@/app/dto/dto";
 import { useRouter } from "next/navigation";
 
-async function DesktopNav({ categories }: { categories: Category[] }) {
+function DesktopNav({ categories }: { categories: Category[] }) {
   const router = useRouter();
 
   return (

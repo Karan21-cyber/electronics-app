@@ -19,3 +19,9 @@ export interface Rating {
     rate:  number;
     count: number;
 }
+
+
+export interface DataResponse{
+    products: Main[]; 
+    categories: Category[];
+}
