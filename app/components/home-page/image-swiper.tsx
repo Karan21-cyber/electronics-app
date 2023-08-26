@@ -32,6 +32,7 @@ const ImageSwiper = () => {
                 fill
                 alt={`Image ${index + 1}`}
                 className="absolute object-cover"
+                priority
               />
             </div>
           </SwiperSlide>

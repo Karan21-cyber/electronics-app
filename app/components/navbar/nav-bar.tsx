@@ -1,10 +1,11 @@
+"use router"
 import MobileNav from "./mobile/mobile-nav";
 import DesktopNav from "./desktop/desktop-nav";
 import { Category } from "@/app/dto/dto";
 import { getAllCategory } from "@/app/api/route";
 
 async function Navbar() {
-  
+
   const categories: Category[] = await getAllCategory();
 
   return (

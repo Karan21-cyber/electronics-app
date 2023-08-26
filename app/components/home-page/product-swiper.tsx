@@ -18,8 +18,8 @@ const ProductSwiper = ({ data }: InewProduct) => {
       <Swiper
         spaceBetween={20}
         breakpoints={{
-          0:{
-            slidesPerView:2,
+          0: {
+            slidesPerView: 2,
           },
           320: {
             slidesPerView: 2,
@@ -39,13 +39,13 @@ const ProductSwiper = ({ data }: InewProduct) => {
         }}
         freeMode
         navigation={{
-          nextEl: ".new-custom-button-next", 
-          prevEl: ".new-custom-button-prev", 
+          nextEl: ".new-custom-button-next",
+          prevEl: ".new-custom-button-prev",
         }}
         modules={[Navigation]}
         className="my-swiper"
       >
-        {data?.slice(0,8).map((product) => (
+        {data?.slice(0, 8).map((product) => (
           <SwiperSlide
             key={Math.random()}
             className="swiper-product min-w-[190px] min-h-[256px] w-[190px] h-[256px]"

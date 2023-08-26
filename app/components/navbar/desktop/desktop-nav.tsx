@@ -1,9 +1,13 @@
+"use client"
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 import { Category } from "@/app/dto/dto";
+import { useRouter } from "next/navigation";
 
 async function DesktopNav({ categories }: { categories: Category[] }) {
+  const router = useRouter();
+
   return (
     <nav className="navbar-container md:px-3 lg:px-[5%] py-3 flex justify-between items-center border-b">
       <div className="lg:px-5 lg:py-[13px]">
@@ -12,7 +16,8 @@ async function DesktopNav({ categories }: { categories: Category[] }) {
           width={25}
           height={25}
           alt="logo"
-          className="object-contain"
+          className="object-contain cursor-pointer"
+          onClick={() => router.push(`/`)}
         />
       </div>
       <ul className="category-links flex md:text-[11px] lg:text-sm font-semibold text-center items-center">
