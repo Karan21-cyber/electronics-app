@@ -1,19 +1,19 @@
-import React from "react";
 import MobileNav from "./mobile/mobile-nav";
 import DesktopNav from "./desktop/desktop-nav";
 import { Category } from "@/app/dto/dto";
+import { getAllCategory } from "@/app/api/route";
 
-interface INavbar{
-  categories:Category[];
-}
-function Navbar({categories}:INavbar) {
+async function Navbar() {
+  
+  const categories: Category[] = await getAllCategory();
+
   return (
     <section className="nav-bar-section overflow-hidden">
       <div className="moibile-nav-section md:hidden">
-        <MobileNav />
+        <MobileNav categories={categories} />
       </div>
       <div className="desktop-nav-section hidden md:block">
-        <DesktopNav categories={categories}/>
+        <DesktopNav categories={categories} />
       </div>
     </section>
   );

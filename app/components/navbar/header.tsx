@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import MobileHeader from "./mobile/mobile-header";
 import DesktopHeader from "./desktop/desktop-header";
-import Drawer from "./drawer/top-drawer";
+import TopDrawer from "./drawer/top-drawer";
 
 function Headers() {
   const [showDate, setShowDate] = useState<boolean>(false);
@@ -36,7 +36,7 @@ function Headers() {
             : "hidden"
         }`}
       >
-        <Drawer />
+        <TopDrawer />
       </div>
       <div className="mobile-header md:hidden relative px-3 sm:px-6 bg-black">
         <MobileHeader showDate={showDate} setShowDate={handleShowDate} />

@@ -2,7 +2,7 @@ import React from "react";
 import { FiClock } from "react-icons/fi";
 import { MdOutlineLocationOn } from "react-icons/md";
 
-function Drawer() {
+function TopDrawer() {
   return (
     <div className="drawer-comonent flex flex-col items-center py-4 gap-3 text-[13px]">
       <div className="open-date-information w-[231px] flex gap-3">
@@ -44,4 +44,4 @@ function Drawer() {
   );
 }
 
-export default Drawer;
+export default TopDrawer;

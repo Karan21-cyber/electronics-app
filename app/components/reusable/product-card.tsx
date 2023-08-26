@@ -1,15 +1,30 @@
 import { Main } from "@/app/dto/dto";
+import Image from "next/image";
 import React from "react";
+
 interface IProduct {
   product: Main;
+  type: string;
 }
 
-function ProductCard({ product }: IProduct) {
+function ProductCard({ product, type }: IProduct) {
   return (
     <div
-      className={`product-card-wrapper w-full flex-col items-center mx-[25px] border`}
+      className={`product-card-wrapper flex-col gap-4 items-center px-3 md:px-6 py-2  border `}
     >
-      <div className="in-stock-wrapper">{product?.title}</div>
+      <h1 className="in-stock-wrapper text-light-green text-[10px] text-center ">
+        in stock
+      </h1>
+      <div className={`image-wrapper relative flex justify-center ${type==='small'? "w-[100px] h-[100px]" : "w-[150px] h-[150px]"}`}>
+        <Image
+          src={product?.image}
+          fill
+          alt={product?.title}
+          className=" absolute object-contain items-center"
+        />
+      </div>
+
+      <h1 className="product-title">{product?.title}</h1>
     </div>
   );
 }
