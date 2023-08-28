@@ -10,15 +10,15 @@ import ReviewCard from "../reusable/review-card";
 function ReviewSection() {
   return (
     <div className="swiper-container flex justify-center">
-      <div className="swiper-wrapper w-full lg:w-[80%]">
+      <div className="swiper-wrapper relative w-full lg:w-[80%]">
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
           loop={true}
           autoplay={{ delay: 3000 }}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, el: ".review-swiper-pagination" }}
           modules={[Pagination, Autoplay]}
-          className="my-swiper "
+          className="review-swiper-container"
         >
           {Array(4)
             .fill("_")
@@ -28,6 +28,7 @@ function ReviewSection() {
               </SwiperSlide>
             ))}
         </Swiper>
+        <div className="review-swiper-pagination absolute transform right-3 bottom-8 z-[99] flex gap-3"></div>{" "}
       </div>
     </div>
   );

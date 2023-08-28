@@ -60,10 +60,10 @@ const ProductSwiper = ({ data ,type}: InewProduct) => {
           </SwiperSlide>
         ))}
       </Swiper>
-     {type === "new" && <> <div className="new-custom-button-next absolute -right-2 text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10  top-[50%] transform -translate-y-[50%]">
+     {type === "new" && <> <div className="new-custom-button-next absolute -right-2 text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10  top-[50%] transform -translate-y-[50%] cursor-pointer">
         {">"}
       </div>
-      <div className="new-custom-button-prev absolute -left-2 top-[50%] text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10 -translate-y-[50%]">
+      <div className="new-custom-button-prev absolute -left-2 top-[50%] text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10 -translate-y-[50%] cursor-pointer">
         {"<"}
       </div></>}
     </div>

@@ -8,7 +8,7 @@ function BlogSection() {
         {" "}
         Follow us on Instagram for News, Offers & More
       </h1>
-      <div className="blog-card-lists flex gap-2 flex-wrap justify-center">
+      <div className="blog-card-lists flex gap-2 md:gap-6 flex-wrap justify-center">
         {Array(9)
           .fill("_")
           .map((index) => (

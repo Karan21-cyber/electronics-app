@@ -4,14 +4,14 @@ import React from "react";
 
 function BlogCard() {
   return (
-    <div className="blog-card-wrapper flex flex-col gap-4 w-[256px]  border ">
+    <div className="blog-card-wrapper flex flex-col gap-4 w-[256px]">
       <Link href={`/products/`} className={`image-wrapper relative  `}>
         <Image
           src={"/products/blog-image.png"}
-          width={233}
+          width={256}
           height={150}
           alt="blog-image"
-          className="object-cover transition delay-400 ease-out hover:scale-110"
+          className="object-cover transition  delay-400 ease-out hover:scale-110"
         />
       </Link>
       <h1 className="blog-description line-clamp-6 ">
