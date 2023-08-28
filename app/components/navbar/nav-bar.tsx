@@ -2,8 +2,10 @@ import MobileNav from "./mobile/mobile-nav";
 import DesktopNav from "./desktop/desktop-nav";
 import { Category } from "@/app/dto/dto";
 
-async function getAllCategory(): Promise<any> {
-  const res = await fetch("https://fakestoreapi.com/products/categories");
+async function getAllCategory(): Promise<Category[]> {
+  const res = await fetch("https://fakestoreapi.com/products/categories", {
+    next: { revalidate: 60 },
+  });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -11,7 +13,7 @@ async function getAllCategory(): Promise<any> {
   return res.json();
 }
 async function Navbar() {
-  const categories: any = await getAllCategory();
+  const categories: Category[] = await getAllCategory();
 
   return (
     <section className="nav-bar-section overflow-hidden">

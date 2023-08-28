@@ -10,11 +10,12 @@ import ProductCard from "../reusable/product-card";
 
 interface InewProduct {
   data: Main[];
+  type:string;
 }
 
-const ProductSwiper = ({ data }: InewProduct) => {
+const ProductSwiper = ({ data ,type}: InewProduct) => {
   return (
-    <div className="swiper-container relative flex flex-wrap ">
+    <div className="swiper-container relative flex flex-wrap overflow-hidden">
       <Swiper
         spaceBetween={20}
         breakpoints={{
@@ -37,11 +38,16 @@ const ProductSwiper = ({ data }: InewProduct) => {
             slidesPerView: 6.5,
           },
         }}
+        loop={true}
         freeMode
-        navigation={{
-          nextEl: ".new-custom-button-next",
-          prevEl: ".new-custom-button-prev",
-        }}
+        navigation={
+          type === "new"
+            ? {
+                nextEl: ".new-custom-button-next",
+                prevEl: ".new-custom-button-prev",
+              }
+            : false
+        }
         modules={[Navigation]}
         className="my-swiper"
       >
@@ -54,12 +60,12 @@ const ProductSwiper = ({ data }: InewProduct) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="new-custom-button-next absolute right-0 text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10  top-[50%] transform -translate-y-[50%]">
+     {type === "new" && <> <div className="new-custom-button-next absolute -right-2 text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10  top-[50%] transform -translate-y-[50%]">
         {">"}
       </div>
-      <div className="new-custom-button-prev absolute left-0 top-[50%] text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10 -translate-y-[50%]">
+      <div className="new-custom-button-prev absolute -left-2 top-[50%] text-white text-[20px] p-2 rounded-[50%] bg-slate-800 font-bold z-10 -translate-y-[50%]">
         {"<"}
-      </div>
+      </div></>}
     </div>
   );
 };

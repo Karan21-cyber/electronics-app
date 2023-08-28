@@ -22,7 +22,7 @@ function NewProductSection({ data }: InewProduct) {
       </div>
 
       <div className="new-product-lists">
-        <ProductSwiper data={data} />
+        <ProductSwiper data={data} type="new" />
       </div>
     </section>
   );
