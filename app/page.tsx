@@ -7,7 +7,6 @@ import ProductSection from "./components/home-page/product-section";
 import TagsSection from "./components/home-page/tags-section";
 import BlogSection from "./components/home-page/blog-section";
 import ReviewSection from "./components/home-page/review-section";
-import Socialtags from "./components/footer/social-tags";
 
 async function getProducts(): Promise<Main[]> {
   const res = await fetch("https://fakestoreapi.com/products", {
