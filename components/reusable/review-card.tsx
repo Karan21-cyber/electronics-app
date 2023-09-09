@@ -3,7 +3,7 @@ import React from "react";
 
 function ReviewCard() {
   return (
-    <div className="review-card-wrapper  w-full flex flex-col gap-4 bg-[#F5F7FF] py-4 px-3">
+    <div className="review-card-wrapper w-full  flex flex-col py-4 px-3 lg:px-10 lg:py-8 gap-4 bg-[#F5F7FF] ">
       <div className="flex justify-center">
         <Image
           src={"/home/review_icon.png"}
@@ -21,7 +21,7 @@ function ReviewCard() {
         highly recommend it.
       </h1>
       <h1 className="review-name text-right text-[10px] md:text-sm font-normal">- John Doe</h1>
-      <button className="review-button text-sm w-[200px] mt-2 font-semibold text-center px-6 py-2 text-[#0156FF] border-[#0156FF] border-2 rounded-[50px]">
+      <button className="review-button text-sm w-[200px]  font-semibold text-center px-6 py-2 text-[#0156FF] border-[#0156FF] border-2 rounded-[50px]">
         Leave Us A Review
       </button>
     </div>

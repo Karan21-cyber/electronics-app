@@ -9,8 +9,8 @@ import ReviewCard from "../reusable/review-card";
 
 function ReviewSection() {
   return (
-    <div className="swiper-container flex justify-center">
-      <div className="swiper-wrapper relative w-full lg:w-[80%]">
+    <div className="swiper-container flex w-full lg:px-[10%] lg:py-10 justify-center ">
+      <div className="swiper-wrapper relative ">
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
@@ -18,17 +18,17 @@ function ReviewSection() {
           autoplay={{ delay: 3000 }}
           pagination={{ clickable: true, el: ".review-swiper-pagination" }}
           modules={[Pagination, Autoplay]}
-          className="review-swiper-container"
+          className="review-swiper-container "
         >
           {Array(4)
             .fill("_")
             .map((_, index) => (
-              <SwiperSlide key={index + 1}>
+              <SwiperSlide key={index + 1} >
                 <ReviewCard />
               </SwiperSlide>
             ))}
         </Swiper>
-        <div className="review-swiper-pagination absolute top-0 right-3 bottom-8 z-[99] flex gap-3"></div>{" "}
+        <div className="review-swiper-pagination absolute top-[100%]  z-[99] flex gap-3"></div>{" "}
       </div>
     </div>
   );
