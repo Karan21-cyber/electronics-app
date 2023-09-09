@@ -1,4 +1,4 @@
-import { tags } from "@/app/utils/tags";
+import { tags } from "@/utils/tags";
 import Image from "next/image";
 import React from "react";
 

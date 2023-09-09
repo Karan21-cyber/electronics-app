@@ -1,7 +1,7 @@
+import Providers from "@/components/provider/provider-component";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import Providers from "./components/provider/provider-component";
 
 const inter = Inter({ subsets: ["latin"] });
 export const poppin = Poppins({

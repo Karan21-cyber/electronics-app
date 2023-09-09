@@ -28,7 +28,7 @@ function ReviewSection() {
               </SwiperSlide>
             ))}
         </Swiper>
-        <div className="review-swiper-pagination absolute transform right-3 bottom-8 z-[99] flex gap-3"></div>{" "}
+        <div className="review-swiper-pagination absolute top-0 right-3 bottom-8 z-[99] flex gap-3"></div>{" "}
       </div>
     </div>
   );

@@ -1,13 +1,12 @@
+import AdsCard from "@/components/home-page/ads-card";
+import BlogSection from "@/components/home-page/blog-section";
+import ImageSwiper from "@/components/home-page/image-swiper";
+import NewProductSection from "@/components/home-page/new-product-section";
+import ProductSection from "@/components/home-page/product-section";
+import ReviewSection from "@/components/home-page/review-section";
+import TagsSection from "@/components/home-page/tags-section";
+import { Main } from "@/dto/dto";
 import { Suspense } from "react";
-import ImageSwiper from "./components/home-page/image-swiper";
-import NewProductSection from "./components/home-page/new-product-section";
-import { Main } from "./dto/dto";
-import AdsCard from "./components/home-page/ads-card";
-import ProductSection from "./components/home-page/product-section";
-import TagsSection from "./components/home-page/tags-section";
-import BlogSection from "./components/home-page/blog-section";
-import ReviewSection from "./components/home-page/review-section";
-import Socialtags from "./components/footer/social-tags";
 
 async function getProducts(): Promise<Main[]> {
   const res = await fetch("https://fakestoreapi.com/products", {
