@@ -1,10 +1,10 @@
 import MobileNav from "./mobile/mobile-nav";
 import DesktopNav from "./desktop/desktop-nav";
-import { Category } from "@/app/dto/dto";
+import { Category } from "@/dto/data-type";
 
-async function getAllCategory(): Promise<Category[]> {
+async function getAllCategory(): Promise<Category[ ]> {
   const res = await fetch("https://fakestoreapi.com/products/categories", {
-    next: { revalidate: 60 },
+    next: { revalidate: 3600 },
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");

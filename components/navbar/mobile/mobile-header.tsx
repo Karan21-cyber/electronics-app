@@ -25,7 +25,7 @@ function MobileHeader({ showDate, setShowDate }: IMobileHeader) {
       </div>
       <header className="header-section w-full bg-black text-white font-semibold text-[11px] pl-[70px]  py-3 flex justify-between items-center">
         <h1
-          className="header-dropdown  flex items-center gap-1"
+          className="header-dropdown  flex items-center gap-1 cursor-pointer"
           onClick={setShowDate}
         >
           <span className="week-days text-light-gray">Mon-Thu:</span> 9:00 AM -

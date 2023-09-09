@@ -4,9 +4,9 @@ import Link from "next/link";
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { BiChevronRight } from "react-icons/bi";
-import { Category } from "@/app/dto/dto";
 import { useRecoilState } from "recoil";
 import { navState } from "@/atom/navbar/nav-bar";
+import { Category } from "@/dto/data-type";
 
 interface Inavbar {
   categories: Category[];

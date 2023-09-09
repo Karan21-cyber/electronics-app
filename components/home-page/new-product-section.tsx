@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { Suspense } from "react";
-import { Main } from "@/app/dto/dto";
 import ProductSwiper from "./product-swiper";
+import { Main } from "@/dto/data-type";
 
 interface InewProduct {
   data: Main[];

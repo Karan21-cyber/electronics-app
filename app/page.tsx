@@ -5,7 +5,7 @@ import NewProductSection from "@/components/home-page/new-product-section";
 import ProductSection from "@/components/home-page/product-section";
 import ReviewSection from "@/components/home-page/review-section";
 import TagsSection from "@/components/home-page/tags-section";
-import { Main } from "@/dto/dto";
+import { Main } from "@/dto/data-type";
 import { Suspense } from "react";
 
 async function getProducts(): Promise<Main[]> {

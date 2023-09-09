@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import { Category } from "@/app/dto/dto";
 import { useRouter } from "next/navigation";
+import { Category } from "@/dto/data-type";
 
 function DesktopNav({ categories }: { categories: Category[] }) {
   const router = useRouter();
@@ -35,11 +35,11 @@ function DesktopNav({ categories }: { categories: Category[] }) {
       </ul>
 
       <div className="flex items-center gap-2 lg:gap-6 ">
-        <FiSearch size={17} className="search-icon" />
-        <div className="cart-container relative">
+        <FiSearch size={17} className="search-icon cursor-pointer" />
+        <div className="cart-container relative cursor-pointer">
           <FiShoppingCart
             size={20}
-            className="cart-icon transform scale-x-[-1]"
+            className="cart-icon transform scale-x-[-1] "
           />
           <p className="number -top-3 -right-1 absolute w-[17px] h-[17px] pt-[1px] text-center text-[10px] font-bold rounded-[50%] bg-sky-blue text-white">
             12
@@ -50,7 +50,7 @@ function DesktopNav({ categories }: { categories: Category[] }) {
           width={36}
           height={36}
           alt="profile"
-          className="object-contain rounded-[50%]"
+          className="object-contain rounded-[50%] cursor-pointer"
         />
       </div>
     </nav>

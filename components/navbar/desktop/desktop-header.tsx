@@ -12,7 +12,7 @@ function DesktopHeader({ showDate, setShowDate }: IMobileHeader) {
   return (
     <header className="header-section w-full bg-black text-white font-semibold text-[11px] lg:px-[5%]  py-3 flex justify-between items-center">
       <h1
-        className="header-dropdown  flex items-center gap-1"
+        className="header-dropdown  flex items-center gap-1 cursor-pointer"
         onClick={setShowDate}
       >
         <span className="week-days text-light-gray">Mon-Thu:</span> 9:00 AM -
@@ -29,10 +29,12 @@ function DesktopHeader({ showDate, setShowDate }: IMobileHeader) {
         </Link>
       </h1>
       <div className="social-information flex gap-[14px] items-center">
-        <h1 className="header-phone-number">Call Us: (00) 1234 5678</h1>
+        <h1 className="header-phone-number cursor-pointer">
+          Call Us: (00) 1234 5678
+        </h1>
         <div className="social-icons flex gap-2 items-center">
-          <AiFillFacebook size={20} />
-          <AiFillInstagram size={20} />
+          <AiFillFacebook size={20} className="cursor-pointer" />
+          <AiFillInstagram size={20} className="cursor-pointer" />
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 import React from "react";
 import ProductBanner from "../reusable/product-banner-card";
 import ProductSwiper from "./product-swiper";
-import { Main } from "@/app/dto/dto";
+import { Main } from "@/dto/data-type";
 
 function ProductSection({ data ,title}: { data: Main[],title:string }) {
   return (

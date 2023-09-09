@@ -5,9 +5,9 @@ import { IoMdPerson } from "react-icons/io";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import Drawer from "@mui/material/Drawer";
 import SideNavbar from "../drawer/side-drawer";
-import { Category } from "@/app/dto/dto";
 import { useRecoilState } from "recoil";
 import { navState } from "@/atom/navbar/nav-bar";
+import { Category } from "@/dto/data-type";
 
 function MobileNav({categories}:{categories:Category[]}) {
   const [navOpen, setNavOpen] = useRecoilState<boolean>(navState);

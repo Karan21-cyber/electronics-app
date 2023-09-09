@@ -5,8 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { Main } from "@/app/dto/dto";
 import ProductCard from "../reusable/product-card";
+import { Main } from "@/dto/data-type";
 
 interface InewProduct {
   data: Main[];

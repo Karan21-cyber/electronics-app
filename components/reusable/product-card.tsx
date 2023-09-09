@@ -1,9 +1,9 @@
-import { Main } from "@/app/dto/dto";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import StarRating from "./rating";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { Main } from "@/dto/data-type";
 
 interface IProduct {
   product: Main;
