@@ -29,9 +29,9 @@ export default async function Home() {
         <NewProductSection data={data} />
       </Suspense>
       <AdsCard />
-      <ProductSection data={data} title="Women's Fashion" />
-      <ProductSection data={data} title="Men's Fashion" />
-      <ProductSection data={data} title="Fashion's Items" />
+      <ProductSection data={data} title="Women's Clothing" image="/home/womenfashion.jpg" />
+      <ProductSection data={data} title="Men's Clothing" image="/home/manfashion.jpg" />
+      <ProductSection data={data} title="Jewelery" image="/home/fashionitem.jpg" />
       <TagsSection />
       <BlogSection />
       <ReviewSection />

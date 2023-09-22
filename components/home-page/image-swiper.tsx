@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-const images = ["/home/image1.png", "/home/image1.png", "/home/image1.png"];
+const images = ["/banner/banner.jpg", "/banner/banner1.jpg", "/banner/banner2.jpg", "/banner/banner3.jpg", "/banner/banner4.jpg", "/banner/banner5.jpg" ];
 
 const ImageSwiper = () => {
   return (
@@ -26,12 +26,12 @@ const ImageSwiper = () => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[82px] lg:h-[355px] sm:h-[173px]">
+            <div className="relative w-full h-[82px] sm:h-[355px] lg:h-[700px]">
               <Image
                 src={image}
                 fill
                 alt={`Image ${index + 1}`}
-                className="absolute object-cover"
+                className="object-cover"
                 priority
               />
             </div>
